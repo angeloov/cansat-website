@@ -6,15 +6,14 @@
     <h1 class="second-title">Oli 3AI Group</h1>
 
     <div class="button-container">
-      
+      <GithubButton></GithubButton>
     </div>
   </div>
-
 </template>
 
 <script>
 import Header from "./components/Header";
-import LinkButton from "./components/LinkButton";
+import GithubButton from "./components/GithubButton";
 import anime from "animejs/lib/anime.es.js";
 import "./styles/fonts.sass";
 
@@ -22,9 +21,9 @@ export default {
   name: "App",
   components: {
     Header,
+    GithubButton,
   },
   mounted() {
-
     anime({
       targets: ".first-title",
       translateY: {
@@ -43,7 +42,6 @@ export default {
       },
       easing: "easeInCubic",
     });
-
   },
 };
 </script>
@@ -109,40 +107,4 @@ body
 
   margin-top: 0.8rem
   margin-bottom: 2.5rem
-
-
-.button-container
-  display: inline-block
-
-  a
-    color: #202020
-    text-decoration: none
-
-    :visited
-      color: #202020
-
-  .inner-button
-    display: flex
-    align-items: center
-    border-radius: 1rem
-    padding: 1rem 0.6rem
-    cursor: pointer
-
-    box-shadow: 0px 0px 5px 1px rgba(130, 130, 130, 0.18)
-
-  .button-text
-    font-family: $font-family
-    font-weight: 700
-    font-size: 1.3rem
-    margin-top: 1px
-
-  img
-    width: 2.5em
-    height: 2.5rem
-
-  .button-text, img
-    margin: 0rem 1rem
-
-  .texts-container
-    text-align: left
 </style>
