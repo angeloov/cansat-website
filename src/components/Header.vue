@@ -2,7 +2,12 @@
   <div>
     <ul class="header-links">
       <li>
-        <a target="_blank" href="https://www.esero.it/cansat/" class="link">What is CanSat?</a>
+        <a
+          target="_blank"
+          href="http://www.esa.int/Education/CanSat/CanSat_2020-21_kicks_off"
+          class="link"
+          >What is CanSat?</a
+        >
       </li>
       <li>
         <a target="_blank" href="https://www.istitutoolivetti.it/" class="link">Our school</a>

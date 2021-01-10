@@ -2,8 +2,9 @@
   <Header></Header>
 
   <div class="titles-container">
-    <h1 class="first-title">CanSat 2020-2021</h1>
-    <h1 class="second-title">Oli 3AI Group</h1>
+    <h1 class="first-title title">CanSat 2020-2021</h1>
+    <h1 class="first-title shadow-first-title title">CanSat 2020-2021</h1>
+    <h1 class="second-title title">Oli 3AI Group</h1>
 
     <div class="button-container">
       <GithubButton></GithubButton>
@@ -25,9 +26,9 @@ export default {
   },
   mounted() {
     anime({
-      targets: ".first-title",
+      targets: ".title",
       translateY: {
-        value: [-250, 0],
+        value: [-400, 0],
         duration: 1300,
       },
       easing: "easeInOutExpo",
@@ -47,7 +48,6 @@ export default {
 </script>
 
 <style lang="sass">
-
 $font-family: Gilroy, "Helvetica Neue", Helvetica, Arial, sans-serif
 
 body
@@ -92,6 +92,15 @@ body
   margin: 0
 
   position: relative
+
+.shadow-first-title
+  position: absolute
+  top: 0
+
+  opacity: 0.20
+  filter: blur(8px)
+  z-index: -1
+
 
 .second-title
   font-size: 2.5rem

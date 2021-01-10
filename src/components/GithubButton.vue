@@ -6,7 +6,7 @@
           <p class="button-text">View our project</p>
           <p class="button-text">on GitHub</p>
         </span>
-        <img :src="require('../assets/open-link.png')" alt="Open link icon" />
+        <img :src="require('../assets/open-link.svg')" alt="Open link icon" />
       </span>
     </a>
   </span>
