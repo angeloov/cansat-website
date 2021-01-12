@@ -20,7 +20,7 @@ footer
 
   color: #202020
 
-  background: #FCFCFC
+  background: #F1F1F1
   padding: 1.2rem 2.8rem
 
   position: relative

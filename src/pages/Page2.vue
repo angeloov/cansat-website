@@ -5,10 +5,11 @@
         <div class="top-line"></div>
         <h1 class="partecipants-title">Partecipants</h1>
       </div>
-
-      <div class="blurred-shadow yellow-blur"></div>
-      <div class="blurred-shadow blue-blur"></div>
-      <div class="blurred-shadow purple-blur"></div>
+      <span class="shadows">
+        <div class="blurred-shadow blue-blur"></div>
+        <div class="blurred-shadow yellow-blur"></div>
+        <div class="blurred-shadow purple-blur"></div>
+      </span>
     </div>
 
     <div class="partecipants-links">
@@ -25,12 +26,36 @@
 <script>
 import NameCard from "../components/NameCard";
 import Footer from "../components/Footer";
+import anime from "animejs/lib/anime.es.js";
 
 export default {
   name: "Page2",
   components: {
     NameCard,
     Footer,
+  },
+  mounted() {
+    let animationDone = false;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting === true && !animationDone) {
+          anime({
+            targets: ".blurred-shadow",
+            opacity: {
+              value: [0, 1],
+              duration: 1800,
+            },
+            easing: "easeInOutExpo",
+          });
+
+          animationDone = true;
+        }
+      },
+      { threshold: [1] }
+    );
+
+    observer.observe(document.querySelector(".shadows"));
   },
 };
 </script>
@@ -120,4 +145,11 @@ $font-family: Gilroy, "Helvetica Neue", Helvetica, Arial, sans-serif
   top: 5%
   right: 10%
   transform: translate(0, -50%)
+
+[data-aos="shadow"]
+  opacity: 0
+  transition-property: opacity
+
+  &.aos-animate
+    opacity: 1
 </style>
